@@ -1,0 +1,8 @@
+extends ../layout/common.pug 
+
+block content
+    span UserName:  
+    span= users.name
+    if users.phone != ''
+        p Phone: 
+        span= users.phone 

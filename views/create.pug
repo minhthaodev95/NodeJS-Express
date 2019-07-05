@@ -1,0 +1,22 @@
+extends ../views/layout/common.pug 
+
+block content
+
+    h1 Create User
+    
+    .container.col-md-4.mt-5
+        if errors
+            each error in errors 
+                .alert.alert-danger= error
+        form(action="/users/create" method = "POST")
+            .form-group.row
+            label.col-sm-2.form-control-label(for='inputEmail3', type="text") Name
+            .col-sm-10
+                input#inputEmail3.form-control(type='text', placeholder='Name', name="name" value=values ? values.name : "")
+            .form-group.row
+            label.col-sm-2.form-control-label(for='inputPassword3', type="text" value=values ? values.name:"") Phone
+            .col-sm-10
+                input#inputPassword3.form-control(type='text', placeholder='Phone Number', name="phone")
+            .form-group.row
+            .col-sm-offset-2.col-sm-10
+                button.btn.btn-primary(type='submit') Create

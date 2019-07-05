@@ -1,0 +1,17 @@
+extends ../layout/common 
+
+block content
+    .container.col-md-4.mt-5
+        form
+            .form-group.row
+            label.col-sm-2.form-control-label(for='inputEmail3') Email
+            .col-sm-10
+                input#inputEmail3.form-control(type='email', placeholder='Email')
+            .form-group.row
+            label.col-sm-2.form-control-label(for='inputPassword3') Password
+            .col-sm-10
+                input#inputPassword3.form-control(type='password', placeholder='Email')
+            .form-group.row
+            .col-sm-offset-2.col-sm-10
+                button.btn.btn-primary(type='submit') Sign in
+
