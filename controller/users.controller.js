@@ -33,6 +33,12 @@ module.exports.getId =  function(req, res){
 
 module.exports.postCreate =  function(req, res){
     req.body.id  = shortid.generate();
+    var pathImageArr = req.file.path.split('/');
+    pathImageArr.shift();
+    pathImageArr.unshift('');
+    var path = pathImageArr.join('/');
+    req.body.avatar = path;
+
     var errors = [];
     if(!req.body.name) {
       errors.push('Name is required');
