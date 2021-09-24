@@ -1,0 +1,24 @@
+<%- include('../layout/common.ejs') -%> 
+
+<div class="container">
+    <h1>Name Users</h1>
+    <div class="d-flex align-items-center">
+        <form class="ml-auto d-flex" action="/users/search" method="GET"><input class="form-control" type="text" name="qe" /><button class="btn btn-primary ml-4 mr-5">Search</button></form>
+    </div>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Detail</th>
+        </tr>
+        <% users.forEach((user) => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.name %></td>
+                <td><%= user.phone %></td>
+                <td><a href="/users/<%= user.id %>">View</a></td>
+            </tr>
+            <%});%>
+    </table>
+</div>

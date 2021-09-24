@@ -1,0 +1,7 @@
+<%- include('../layout/common.ejs') -%> 
+
+<span>Username : <%= users.name%> </span>
+<% if(users.phone != ''){ %> <p>
+    <span><%= users.phone %></span>
+</p> <% }%>
+    <img height="100px" width="100px" src="<%= users.avatar%>" alt="image">

@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-
+let ejs = require('ejs')
 
 var userRouter = require('./router/users.route');
 const port = 3000;
 
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.urlencoded({extended: true}));
 
